@@ -129,7 +129,7 @@ class GlancesStandalone(object):
         else:
             # Nothing is displayed
             # Break should be done via a signal (CTRL-C)
-            time.sleep(self.refresh_time - counter.get())
+            time.sleep(max(0, self.refresh_time - counter.get()))
             ret = True
 
         return ret
